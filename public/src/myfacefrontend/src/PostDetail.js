@@ -1,5 +1,8 @@
 import './App.scss';
 import React , {useState , useEffect} from 'react';
+import LikePost from './LikePost'
+import DislikePost from './DislikePost'
+
 
 function PostDetail() {
     const [posts , setPosts] = useState(null);
@@ -14,6 +17,8 @@ function PostDetail() {
           {posts.map(post => <div className ="post-message"> 
         {post.message}
         {<img className="post-image"src={post.imageUrl}/>}
+        <LikePost/>
+        <DislikePost/>
       </div>)}
     </div>
   );
